@@ -38,7 +38,7 @@ public class Even {
                     even = Even.choiceEven();
                 }
             } else if (randomInt % 2 != 0 && !even.equals("no")) {
-                System.out.println(even + " is wrong answer ;(. Correct answer was 'no'.");
+                System.out.println("'" + even + "'" + " is wrong answer ;(. Correct answer was 'no'.");
                 System.out.println("Let's try again, " + App.name + "!");
                 break;
             }
