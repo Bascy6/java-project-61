@@ -26,10 +26,10 @@ public class Calc {
 
         System.out.println("What is the result of the expression?");
         System.out.println("Question: " + first + operation + second);
-        int calc = Calc.answer();
+        int answer = Calc.answer();
 
         while (count != 3) {
-            if (calc == solution) {
+            if (answer == solution) {
                 System.out.println("Correct!");
                 count++;
                 if (count == 3) {
@@ -49,10 +49,10 @@ public class Calc {
                         solution = first * second;
                     }
                     System.out.println("Question: " + first + operation + second);
-                    calc = Calc.answer();
+                    answer = Calc.answer();
                 }
             } else {
-                System.out.println("'" + calc + "' is wrong answer ;(. Correct answer was '" + solution + "'.");
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + solution + "'.");
                 System.out.println("Let's try again, " + App.name + "!");
                 break;
         }
@@ -66,4 +66,3 @@ public class Calc {
         return input;
     }
 }
-

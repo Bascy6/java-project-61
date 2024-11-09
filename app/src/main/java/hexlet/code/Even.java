@@ -4,14 +4,16 @@ import java.util.Scanner;
 
 public class Even {
     public static void evenMain() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+
         int randomInt = (int) (Math.random() * 100);
-        System.out.println("Question: " + randomInt);
-        String even = Even.choiceEven();
         int count = 0;
+
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        System.out.println("Question: " + randomInt);
+        String answer = Even.answer();
+
         while (count != 3) {
-            // если число четное
-            if (randomInt % 2 == 0 && even.equals("yes")) {
+            if (randomInt % 2 == 0 && answer.equals("yes")) {
                 System.out.println("Correct!");
                 count++;
                 if (count == 3) {
@@ -19,15 +21,13 @@ public class Even {
                 } else {
                     randomInt = (int) (Math.random() * 100);
                     System.out.println("Question: " + randomInt);
-                    even = Even.choiceEven();
+                    answer = Even.answer();
                 }
-            } else if (randomInt % 2 == 0 && !even.equals("yes")) {
-                // неверный ответ при четном числе
-                System.out.println(even + " is wrong answer ;(. Correct answer was 'yes'.");
+            } else if (randomInt % 2 == 0 && !answer.equals("yes")) {
+                System.out.println(answer + " is wrong answer ;(. Correct answer was 'yes'.");
                 System.out.println("Let's try again, " + App.name + "!");
                 break;
-                // если чесно нечетное
-            } else if (randomInt % 2 != 0 && even.equals("no")) {
+            } else if (randomInt % 2 != 0 && answer.equals("no")) {
                 System.out.println("Correct!");
                 count++;
                 if (count == 3) {
@@ -35,20 +35,26 @@ public class Even {
                 } else {
                     randomInt = (int) (Math.random() * 100);
                     System.out.println("Question: " + randomInt);
-                    even = Even.choiceEven();
+                    answer = Even.answer();
                 }
-            } else if (randomInt % 2 != 0 && !even.equals("no")) {
-                System.out.println("'" + even + "'" + " is wrong answer ;(. Correct answer was 'no'.");
+            } else if (randomInt % 2 != 0 && !answer.equals("no")) {
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was 'no'.");
                 System.out.println("Let's try again, " + App.name + "!");
                 break;
             }
         }
     }
 
-    public static String choiceEven() {
+    public static String answer() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Your answer: ");
         String input = scanner.nextLine();
         return input;
+    }
+
+    public static void enter(int randomInt, String even) {
+        randomInt = (int) (Math.random() * 100);
+        System.out.println("Question: " + randomInt);
+        even = Even.answer();
     }
 }
