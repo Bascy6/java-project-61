@@ -2,8 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Arrays;
-
 public class Progression {
     private static String[][] round() {
         String[][] data = new String[Engine.ROUNDS][Engine.ROUNDS];
@@ -15,7 +13,7 @@ public class Progression {
             for (int k = 1; k < Engine.TEN; k++) {
                 array[k] = array[k - 1] + step;
             }
-            data[i][0] = Arrays.toString(question(array, gap));
+            data[i][0] = String.join(" ", question(array, gap));
             data[i][1] = Integer.toString(array[gap]);
         }
         return data;
