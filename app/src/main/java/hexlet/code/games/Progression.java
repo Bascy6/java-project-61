@@ -13,14 +13,16 @@ public class Progression {
 
         int count = 0;
         int[] array = new int[10];
-        array[0] = Number.getRandomInt(0, 10);
-        int step = Number.getRandomInt(2, 6);
-        int gap = Number.getRandomInt(2, 11);
+        array[0] = Number.getRandomInt(0, 10); // первое число массива
+        int step = Number.getRandomInt(2, 6); // разница между всеми числами
+        int gap = Number.getRandomInt(2, 10); // случайная позиция числа, которое будет искомым
+        // заполнение массива
         for (int i = 1; i < 10; i++) {
             array[i] = array[i - 1] + step;
         }
-        int number = array[gap];
+        int number = array[gap]; // искомое число
         System.out.print("Question: ");
+        // вывод массива без искомого числа
         for (int j = 0; j < 10; j++) {
             if (array[j] == array[gap]) {
                 System.out.print(".. ");
@@ -28,7 +30,7 @@ public class Progression {
                 System.out.print(array[j] + " ");
             }
         }
-        int answer = Progression.answer();
+        int answer = Progression.answer(); // ответ
 
         while (count != 3) {
             if (answer == number) {
@@ -39,7 +41,7 @@ public class Progression {
                 } else {
                     array[0] = Number.getRandomInt(0, 10);
                     step = Number.getRandomInt(2, 6);
-                    gap = Number.getRandomInt(2, 11);
+                    gap = Number.getRandomInt(2, 10);
                     for (int i = 1; i < 10; i++) {
                         array[i] = array[i - 1] + step;
                     }
