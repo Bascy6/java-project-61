@@ -2,14 +2,15 @@ package hexlet.code.games;
 
 import hexlet.code.Cli;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
     public static void calcMain() {
 
-        int first = (int) (Math.random() * 10);
-        int second = (int) (Math.random() * 10);
-        int random = (int) (Math.random() * 3);
+        int first = Number.getRandomInt(9);
+        int second = Number.getRandomInt(9);
+        int random = Number.getRandomInt(2);
 
         int count = 0;
         int solution;
@@ -38,9 +39,9 @@ public class Calc {
                 if (count == 3) {
                     System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
-                    first = (int) (Math.random() * 10);
-                    second = (int) (Math.random() * 10);
-                    random = (int) (Math.random() * 3);
+                    first = Number.getRandomInt(9);
+                    second = Number.getRandomInt(9);
+                    random = Number.getRandomInt(2);
                     if (random == 0) {
                         operation = " + ";
                         solution = first + second;
@@ -67,5 +68,12 @@ public class Calc {
         System.out.print("Your answer: ");
         int input = scanner.nextInt();
         return input;
+    }
+
+    public class Number {
+        public static int getRandomInt(int max) {
+            Random rand = new Random();
+            return rand.nextInt(max);
+        }
     }
 }

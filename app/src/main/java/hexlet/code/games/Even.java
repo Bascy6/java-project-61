@@ -1,13 +1,12 @@
 package hexlet.code.games;
-
 import hexlet.code.Cli;
-
+import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
     public static void evenMain() {
 
-        int randomInt = (int) (Math.random() * 100);
+        int randomInt = Number.getRandomInt(99);
         int count = 0;
         Cli.userName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
@@ -21,7 +20,7 @@ public class Even {
                 if (count == 3) {
                     System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
-                    randomInt = (int) (Math.random() * 100);
+                    randomInt = Number.getRandomInt(99);
                     System.out.println("Question: " + randomInt);
                     answer = Even.answer();
                 }
@@ -35,7 +34,7 @@ public class Even {
                 if (count == 3) {
                     System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
-                    randomInt = (int) (Math.random() * 100);
+                    randomInt = Number.getRandomInt(99);
                     System.out.println("Question: " + randomInt);
                     answer = Even.answer();
                 }
@@ -52,5 +51,12 @@ public class Even {
         System.out.print("Your answer: ");
         String input = scanner.nextLine();
         return input;
+    }
+
+    public class Number {
+        public static int getRandomInt(int max) {
+            Random rand = new Random();
+            return rand.nextInt(max);
+        }
     }
 }

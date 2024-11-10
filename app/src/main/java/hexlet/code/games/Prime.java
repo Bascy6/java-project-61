@@ -28,6 +28,11 @@ public class Prime {
                     answer = Prime.answer();
                 }
             } else {
+                if (isNatural(randomInt).equals("no") && !answer.equals("no")) {
+                    System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was 'no'.");
+                    System.out.println("Let's try again, " + Cli.name + "!");
+                    break;
+                }
                 System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was 'yes'.");
                 System.out.println("Let's try again, " + Cli.name + "!");
                 break;

@@ -7,4 +7,4 @@
 - [Asciinema of game Calc](https://asciinema.org/a/ONyDVVs1K6R2suVgLy5EYxhyZ)
 - [Asciinema of game GCD](https://asciinema.org/a/x2bPVf0maNJSVCzLQ81F5W1r0)
 - [Asciinema of game Progression](https://asciinema.org/a/sxF82IVhGYBgjXG2CJp91UT4T)
-- [Asciinema of game Prime](https://asciinema.org/a/Ikogh7EJIVWf3qbBwkGg04XK1)
+- [Asciinema of game Prime](https://asciinema.org/a/vntSzo5aIqj2ikJnIr3PFbPnP)

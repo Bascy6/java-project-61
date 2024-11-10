@@ -2,13 +2,14 @@ package hexlet.code.games;
 
 import hexlet.code.Cli;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class GCD {
     public static void gcdMain() {
 
-        int first = (int) (Math.random() * 100);
-        int second = (int) (Math.random() * 100);
+        int first = Number.getRandomInt(99);
+        int second = Number.getRandomInt(99);
 
         int count = 0;
 
@@ -24,8 +25,8 @@ public class GCD {
                 if (count == 3) {
                     System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
-                    first = (int) (Math.random() * 100);
-                    second = (int) (Math.random() * 100);
+                    first = Number.getRandomInt(99);
+                    second = Number.getRandomInt(99);
                     System.out.println("Question: " + first + " " + second);
                     answer = GCD.answer();
                 }
@@ -58,5 +59,12 @@ public class GCD {
             }
         }
         return first;
+    }
+
+    public class Number {
+        public static int getRandomInt(int max) {
+            Random rand = new Random();
+            return rand.nextInt(max);
+        }
     }
 }
