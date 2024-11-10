@@ -31,9 +31,9 @@ public class Progression {
         String[] numbers = new String[10];
         for (int j = 0; j < Engine.TEN; j++) {
             if (array[j] == array[gap]) {
-                numbers[j] = ".. ";
+                numbers[j] = "..";
             } else {
-                numbers[j] = Integer.toString(array[j]) + " ";
+                numbers[j] = Integer.toString(array[j]);
             }
         }
         return numbers;
