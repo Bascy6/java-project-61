@@ -12,10 +12,10 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
 
         int count = 0;
-        int[] array = new int[11];
-        array[0] = Number.getRandomInt(0, 10);
+        int[] array = new int[10];
+        array[0] = Number.getRandomInt(0, 9);
         int step = Number.getRandomInt(2, 6);
-        int gap = Number.getRandomInt(2, 10);
+        int gap = Number.getRandomInt(1, 9);
         for (int i = 1; i < 10; i++) {
             array[i] = array[i - 1] + step;
         }
@@ -37,9 +37,9 @@ public class Progression {
                 if (count == 3) {
                     System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
-                    array[0] = Number.getRandomInt(0, 10);
+                    array[0] = Number.getRandomInt(0, 9);
                     step = Number.getRandomInt(2, 6);
-                    gap = Number.getRandomInt(2, 10);
+                    gap = Number.getRandomInt(1, 9);
                     for (int i = 1; i < 10; i++) {
                         array[i] = array[i - 1] + step;
                     }
