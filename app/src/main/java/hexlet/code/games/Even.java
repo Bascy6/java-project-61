@@ -6,21 +6,21 @@ import hexlet.code.Engine;
 public class Even {
     public static void evenMain() {
 
-        int randomInt = Engine.getRandomInt(0, 99);
+        int randomInt = Engine.getRandomInt(0, Engine.HUNDRED);
         int count = 0;
         Cli.userName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         System.out.println("Question: " + randomInt);
         String answer = Engine.answerStr();
 
-        while (count != 3) {
+        while (count != Engine.ROUNDS) {
             if (randomInt % 2 == 0 && answer.equals("yes") || randomInt % 2 != 0 && answer.equals("no")) {
                 System.out.println("Correct!");
                 count++;
-                if (count == 3) {
+                if (count == Engine.ROUNDS) {
                     System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
-                    randomInt = Engine.getRandomInt(0, 99);
+                    randomInt = Engine.getRandomInt(0, Engine.HUNDRED);
                     System.out.println("Question: " + randomInt);
                     answer = Engine.answerStr();
                 }

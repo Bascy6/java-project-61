@@ -3,6 +3,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
+    public static final int HUNDRED = 100;
+    public static final int ROUNDS = 3;
+    public static final int SIX = 6;
+    public static final int NINE = 9;
+    public static final int TEN = 10;
 
     public static int getRandomInt(int min, int max) {
         Random rand = new Random();

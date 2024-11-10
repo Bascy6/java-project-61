@@ -6,8 +6,8 @@ import hexlet.code.Engine;
 public class GCD {
     public static void gcdMain() {
 
-        int first = Engine.getRandomInt(0, 99);
-        int second = Engine.getRandomInt(0, 99);
+        int first = Engine.getRandomInt(0, Engine.HUNDRED);
+        int second = Engine.getRandomInt(0, Engine.HUNDRED);
 
         int count = 0;
 
@@ -16,15 +16,15 @@ public class GCD {
         System.out.println("Question: " + first + " " + second);
         int answer = Engine.answerInt();
 
-        while (count != 3) {
+        while (count != Engine.ROUNDS) {
             if (gcd(first, second) == answer) {
                 System.out.println("Correct!");
                 count++;
-                if (count == 3) {
+                if (count == Engine.ROUNDS) {
                     System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
-                    first = Engine.getRandomInt(0, 99);
-                    second = Engine.getRandomInt(0, 99);
+                    first = Engine.getRandomInt(0, Engine.HUNDRED);
+                    second = Engine.getRandomInt(0, Engine.HUNDRED);
                     System.out.println("Question: " + first + " " + second);
                     answer = Engine.answerInt();
                 }

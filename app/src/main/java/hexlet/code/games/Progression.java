@@ -10,16 +10,16 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
 
         int count = 0;
-        int[] array = new int[10];
-        array[0] = Engine.getRandomInt(0, 9);
-        int step = Engine.getRandomInt(2, 6);
-        int gap = Engine.getRandomInt(1, 9);
-        for (int i = 1; i < 10; i++) {
+        int[] array = new int[Engine.TEN];
+        array[0] = Engine.getRandomInt(0, Engine.NINE);
+        int step = Engine.getRandomInt(2, Engine.SIX);
+        int gap = Engine.getRandomInt(1, Engine.NINE);
+        for (int i = 1; i < Engine.TEN; i++) {
             array[i] = array[i - 1] + step;
         }
 
         System.out.print("Question: ");
-        for (int j = 0; j < 10; j++) {
+        for (int j = 0; j < Engine.TEN; j++) {
             if (array[j] == array[gap]) {
                 System.out.print(".. ");
             } else {
@@ -28,21 +28,21 @@ public class Progression {
         }
         int answer = Engine.answerInt();
 
-        while (count != 3) {
+        while (count != Engine.ROUNDS) {
             if (answer == array[gap]) {
                 System.out.println("Correct!");
                 count++;
-                if (count == 3) {
+                if (count == Engine.ROUNDS) {
                     System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
-                    array[0] = Engine.getRandomInt(0, 9);
-                    step = Engine.getRandomInt(2, 6);
-                    gap = Engine.getRandomInt(1, 9);
-                    for (int i = 1; i < 10; i++) {
+                    array[0] = Engine.getRandomInt(0, Engine.NINE);
+                    step = Engine.getRandomInt(2, Engine.SIX);
+                    gap = Engine.getRandomInt(1, Engine.NINE);
+                    for (int i = 1; i < Engine.TEN; i++) {
                         array[i] = array[i - 1] + step;
                     }
                     System.out.print("Question: ");
-                    for (int j = 0; j < 10; j++) {
+                    for (int j = 0; j < Engine.TEN; j++) {
                         if (array[j] == array[gap]) {
                             System.out.print(".. ");
                         } else {

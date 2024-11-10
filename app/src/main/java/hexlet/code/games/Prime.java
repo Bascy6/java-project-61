@@ -9,19 +9,19 @@ public class Prime {
         int count = 0;
         Cli.userName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        int randomInt = Engine.getRandomInt(2, 100);
+        int randomInt = Engine.getRandomInt(2, Engine.HUNDRED);
         System.out.println("Question: " + randomInt);
         String answer = Engine.answerStr();
 
-        while (count != 3) {
+        while (count != Engine.ROUNDS) {
             if ((isNatural(randomInt).equals("yes") && answer.equals("yes"))
                     || isNatural(randomInt).equals("no") && answer.equals("no")) {
                 System.out.println("Correct!");
                 count++;
-                if (count == 3) {
+                if (count == Engine.ROUNDS) {
                     System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
-                    randomInt = Engine.getRandomInt(2, 100);
+                    randomInt = Engine.getRandomInt(2, Engine.HUNDRED);
                     System.out.println("Question: " + randomInt);
                     answer = Engine.answerStr();
                 }

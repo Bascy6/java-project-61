@@ -6,8 +6,8 @@ import hexlet.code.Engine;
 public class Calc {
     public static void calcMain() {
 
-        int first = Engine.getRandomInt(0, 9);
-        int second = Engine.getRandomInt(0, 9);
+        int first = Engine.getRandomInt(0, Engine.NINE);
+        int second = Engine.getRandomInt(0, Engine.NINE);
         int random = Engine.getRandomInt(0, 2);
 
         int count = 0;
@@ -30,15 +30,15 @@ public class Calc {
         System.out.println("Question: " + first + operation + second);
         int answer = Engine.answerInt();
 
-        while (count != 3) {
+        while (count != Engine.ROUNDS) {
             if (answer == solution) {
                 System.out.println("Correct!");
                 count++;
-                if (count == 3) {
+                if (count == Engine.ROUNDS) {
                     System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
-                    first = Engine.getRandomInt(0, 9);
-                    second = Engine.getRandomInt(0, 9);
+                    first = Engine.getRandomInt(0, Engine.NINE);
+                    second = Engine.getRandomInt(0, Engine.NINE);
                     random = Engine.getRandomInt(0, 2);
                     if (random == 0) {
                         operation = " + ";
