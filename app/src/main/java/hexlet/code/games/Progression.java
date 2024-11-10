@@ -12,17 +12,15 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
 
         int count = 0;
-        int[] array = new int[10];
-        array[0] = Number.getRandomInt(0, 10); // первое число массива
-        int step = Number.getRandomInt(2, 6); // разница между всеми числами
-        int gap = Number.getRandomInt(2, 10); // случайная позиция числа, которое будет искомым
-        // заполнение массива
+        int[] array = new int[11];
+        array[0] = Number.getRandomInt(0, 10);
+        int step = Number.getRandomInt(2, 6);
+        int gap = Number.getRandomInt(2, 10);
         for (int i = 1; i < 10; i++) {
             array[i] = array[i - 1] + step;
         }
-        int number = array[gap]; // искомое число
+
         System.out.print("Question: ");
-        // вывод массива без искомого числа
         for (int j = 0; j < 10; j++) {
             if (array[j] == array[gap]) {
                 System.out.print(".. ");
@@ -30,10 +28,10 @@ public class Progression {
                 System.out.print(array[j] + " ");
             }
         }
-        int answer = Progression.answer(); // ответ
+        int answer = Progression.answer();
 
         while (count != 3) {
-            if (answer == number) {
+            if (answer == array[gap]) {
                 System.out.println("Correct!");
                 count++;
                 if (count == 3) {
@@ -45,7 +43,6 @@ public class Progression {
                     for (int i = 1; i < 10; i++) {
                         array[i] = array[i - 1] + step;
                     }
-                    number = array[gap];
                     System.out.print("Question: ");
                     for (int j = 0; j < 10; j++) {
                         if (array[j] == array[gap]) {
@@ -56,7 +53,6 @@ public class Progression {
                     }
                     answer = Progression.answer();
                 }
-                // если был дан неверный ответ
             } else {
                 System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was '" + array[gap] + "'.");
                 System.out.println("Let's try again, " + Cli.name + "!");
