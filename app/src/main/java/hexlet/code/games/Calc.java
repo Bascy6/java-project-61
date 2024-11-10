@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Cli;
 
 import java.util.Scanner;
 
@@ -24,6 +26,7 @@ public class Calc {
             solution = first * second;
         }
 
+        Cli.userName();
         System.out.println("What is the result of the expression?");
         System.out.println("Question: " + first + operation + second);
         int answer = Calc.answer();
@@ -33,7 +36,7 @@ public class Calc {
                 System.out.println("Correct!");
                 count++;
                 if (count == 3) {
-                    System.out.println("Congratulations, " + App.name + "!");
+                    System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
                     first = (int) (Math.random() * 10);
                     second = (int) (Math.random() * 10);
@@ -53,7 +56,7 @@ public class Calc {
                 }
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + solution + "'.");
-                System.out.println("Let's try again, " + App.name + "!");
+                System.out.println("Let's try again, " + Cli.name + "!");
                 break;
         }
     }

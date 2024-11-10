@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Cli;
 
 import java.util.Scanner;
 
@@ -10,6 +12,7 @@ public class GCD {
 
         int count = 0;
 
+        Cli.userName();
         System.out.println("Find the greatest common divisor of given numbers.");
         System.out.println("Question: " + first + " " + second);
         int answer = GCD.answer();
@@ -19,7 +22,7 @@ public class GCD {
                 System.out.println("Correct!");
                 count++;
                 if (count == 3) {
-                    System.out.println("Congratulations, " + App.name + "!");
+                    System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
                     first = (int) (Math.random() * 100);
                     second = (int) (Math.random() * 100);
@@ -28,7 +31,7 @@ public class GCD {
                 }
             } else {
                 System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was '" + gcd(first, second) + "'.");
-                System.out.println("Let's try again, " + App.name + "!");
+                System.out.println("Let's try again, " + Cli.name + "!");
                 break;
             }
         }
