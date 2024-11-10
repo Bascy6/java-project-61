@@ -1,65 +1,41 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
+import java.util.Arrays;
+
 public class Progression {
-    public static void progressionMain() {
-
-        Cli.userName();
-        System.out.println("What number is missing in the progression?");
-
-        int count = 0;
-        int[] array = new int[Engine.TEN];
-        array[0] = Engine.getRandomInt(0, Engine.NINE);
-        int step = Engine.getRandomInt(2, Engine.SIX);
-        int gap = Engine.getRandomInt(1, Engine.NINE);
-        for (int i = 1; i < Engine.TEN; i++) {
-            array[i] = array[i - 1] + step;
+    private static String[][] round() {
+        String[][] data = new String[Engine.ROUNDS][Engine.ROUNDS];
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            int step = Engine.getRandomInt(2, Engine.SIX);
+            int gap = Engine.getRandomInt(1, Engine.NINE);
+            int[] array = new int[Engine.TEN];
+            array[0] = Engine.getRandomInt(0, Engine.NINE);
+            for (int k = 1; k < Engine.TEN; k++) {
+                array[k] = array[k - 1] + step;
+            }
+            data[i][0] = Arrays.toString(question(array, gap));
+            data[i][1] = Integer.toString(array[gap]);
         }
+        return data;
+    }
 
-        System.out.print("Question: ");
+    public static void runGame() {
+        String rule = "What number is missing in the progression?";
+        String[][] data = round();
+        Engine.game(data, rule);
+    }
+
+    public static String[] question(int[] array, int gap) {
+        String[] numbers = new String[10];
         for (int j = 0; j < Engine.TEN; j++) {
             if (array[j] == array[gap]) {
-                System.out.print(".. ");
+                numbers[j] = ".. ";
             } else {
-                System.out.print(array[j] + " ");
+                numbers[j] = Integer.toString(array[j]) + " ";
             }
         }
-        int answer = Engine.answerInt();
-
-        while (count != Engine.ROUNDS) {
-            if (answer == array[gap]) {
-                System.out.println("Correct!");
-                count++;
-                if (count == Engine.ROUNDS) {
-                    System.out.println("Congratulations, " + Cli.name + "!");
-                } else {
-                    array[0] = Engine.getRandomInt(0, Engine.NINE);
-                    step = Engine.getRandomInt(2, Engine.SIX);
-                    gap = Engine.getRandomInt(1, Engine.NINE);
-                    for (int i = 1; i < Engine.TEN; i++) {
-                        array[i] = array[i - 1] + step;
-                    }
-                    System.out.print("Question: ");
-                    for (int j = 0; j < Engine.TEN; j++) {
-                        if (array[j] == array[gap]) {
-                            System.out.print(".. ");
-                        } else {
-                            System.out.print(array[j] + " ");
-                        }
-                    }
-                    answer = Engine.answerInt();
-                }
-            } else {
-                System.out.println("'"
-                        + answer + "'"
-                        + " is wrong answer ;(. Correct answer was '"
-                        + array[gap]
-                        + "'.");
-                System.out.println("Let's try again, " + Cli.name + "!");
-                break;
-            }
-        }
+        return numbers;
     }
 }

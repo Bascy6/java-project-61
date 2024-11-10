@@ -19,22 +19,22 @@ public class App {
 
         switch (game) {
             case "1":
-                Cli.userName();
+                Engine.great();
                 break;
             case "2":
-                Even.evenMain();
+                Even.runGame();
                 break;
             case "3":
-                Calc.calcMain();
+                Calc.runGame();
                 break;
             case "4":
-                GCD.gcdMain();
+                GCD.runGame();
                 break;
             case "5":
-                Progression.progressionMain();
+                Progression.runGame();
                 break;
             case "6":
-                Prime.primeMain();
+                Prime.runGame();
                 break;
             default:
                 break;
