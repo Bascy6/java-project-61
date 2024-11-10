@@ -6,3 +6,4 @@
 - [Asciinema of game Even](https://asciinema.org/a/4F42lmfcL5CgGIKlMoV5BmN03)
 - [Asciinema of game Calc](https://asciinema.org/a/ONyDVVs1K6R2suVgLy5EYxhyZ)
 - [Asciinema of game GCD](https://asciinema.org/a/x2bPVf0maNJSVCzLQ81F5W1r0)
+- [Asciinema of game Progression](https://asciinema.org/a/sxF82IVhGYBgjXG2CJp91UT4T)
