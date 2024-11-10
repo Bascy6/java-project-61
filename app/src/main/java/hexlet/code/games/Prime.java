@@ -1,9 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
-
-import java.util.Random;
-import java.util.Scanner;
+import hexlet.code.Engine;
 
 public class Prime {
     public static void primeMain() {
@@ -11,9 +9,9 @@ public class Prime {
         int count = 0;
         Cli.userName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        int randomInt = Number.getRandomInt(2, 100);
+        int randomInt = Engine.getRandomInt(2, 100);
         System.out.println("Question: " + randomInt);
-        String answer = Prime.answer();
+        String answer = Engine.answerStr();
 
         while (count != 3) {
             if ((isNatural(randomInt).equals("yes") && answer.equals("yes"))
@@ -23,9 +21,9 @@ public class Prime {
                 if (count == 3) {
                     System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
-                    randomInt = Number.getRandomInt(2, 100);
+                    randomInt = Engine.getRandomInt(2, 100);
                     System.out.println("Question: " + randomInt);
-                    answer = Prime.answer();
+                    answer = Engine.answerStr();
                 }
             } else {
                 if (isNatural(randomInt).equals("no") && !answer.equals("no")) {
@@ -40,13 +38,6 @@ public class Prime {
         }
     }
 
-    public static String answer() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Your answer: ");
-        String input = scanner.nextLine();
-        return input;
-    }
-
     public static String isNatural(int randomInt) {
         for (int i = 2; i < randomInt / 2; i++) {
             if (randomInt % i == 0) {
@@ -54,12 +45,5 @@ public class Prime {
             }
         }
         return "yes";
-    }
-
-    public class Number {
-        public static int getRandomInt(int min, int max) {
-            Random rand = new Random();
-            return rand.nextInt(max - min + 1) + min;
-        }
     }
 }

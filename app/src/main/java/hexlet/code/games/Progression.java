@@ -1,9 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
-
-import java.util.Random;
-import java.util.Scanner;
+import hexlet.code.Engine;
 
 public class Progression {
     public static void progressionMain() {
@@ -13,9 +11,9 @@ public class Progression {
 
         int count = 0;
         int[] array = new int[10];
-        array[0] = Number.getRandomInt(0, 9);
-        int step = Number.getRandomInt(2, 6);
-        int gap = Number.getRandomInt(1, 9);
+        array[0] = Engine.getRandomInt(0, 9);
+        int step = Engine.getRandomInt(2, 6);
+        int gap = Engine.getRandomInt(1, 9);
         for (int i = 1; i < 10; i++) {
             array[i] = array[i - 1] + step;
         }
@@ -28,7 +26,7 @@ public class Progression {
                 System.out.print(array[j] + " ");
             }
         }
-        int answer = Progression.answer();
+        int answer = Engine.answerInt();
 
         while (count != 3) {
             if (answer == array[gap]) {
@@ -37,9 +35,9 @@ public class Progression {
                 if (count == 3) {
                     System.out.println("Congratulations, " + Cli.name + "!");
                 } else {
-                    array[0] = Number.getRandomInt(0, 9);
-                    step = Number.getRandomInt(2, 6);
-                    gap = Number.getRandomInt(1, 9);
+                    array[0] = Engine.getRandomInt(0, 9);
+                    step = Engine.getRandomInt(2, 6);
+                    gap = Engine.getRandomInt(1, 9);
                     for (int i = 1; i < 10; i++) {
                         array[i] = array[i - 1] + step;
                     }
@@ -51,7 +49,7 @@ public class Progression {
                             System.out.print(array[j] + " ");
                         }
                     }
-                    answer = Progression.answer();
+                    answer = Engine.answerInt();
                 }
             } else {
                 System.out.println("'"
@@ -62,20 +60,6 @@ public class Progression {
                 System.out.println("Let's try again, " + Cli.name + "!");
                 break;
             }
-        }
-    }
-
-    public static int answer() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("\nYour answer: ");
-        int input = scanner.nextInt();
-        return input;
-    }
-
-    public class Number {
-        public static int getRandomInt(int min, int max) {
-            Random rand = new Random();
-            return rand.nextInt(max - min + 1) + min;
         }
     }
 }
