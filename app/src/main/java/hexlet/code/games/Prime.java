@@ -16,7 +16,8 @@ public class Prime {
         String answer = Prime.answer();
 
         while (count != 3) {
-            if ((isNatural(randomInt).equals("yes") && answer.equals("yes")) || isNatural(randomInt).equals("no") && answer.equals("no")) {
+            if ((isNatural(randomInt).equals("yes") && answer.equals("yes"))
+                    || isNatural(randomInt).equals("no") && answer.equals("no")) {
                 System.out.println("Correct!");
                 count++;
                 if (count == 3) {
@@ -42,7 +43,7 @@ public class Prime {
     }
 
     public static String isNatural(int randomInt) {
-        for(int i = 2; i < randomInt / 2; i++) {
+        for (int i = 2; i < randomInt / 2; i++) {
             if (randomInt % i == 0) {
                 return "no";
             }

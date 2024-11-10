@@ -30,7 +30,11 @@ public class GCD {
                     answer = GCD.answer();
                 }
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was '" + gcd(first, second) + "'.");
+                System.out.println("'"
+                        + answer + "'"
+                        + " is wrong answer ;(. Correct answer was '"
+                        + gcd(first, second)
+                        + "'.");
                 System.out.println("Let's try again, " + Cli.name + "!");
                 break;
             }

@@ -54,7 +54,11 @@ public class Progression {
                     answer = Progression.answer();
                 }
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was '" + array[gap] + "'.");
+                System.out.println("'"
+                        + answer + "'"
+                        + " is wrong answer ;(. Correct answer was '"
+                        + array[gap]
+                        + "'.");
                 System.out.println("Let's try again, " + Cli.name + "!");
                 break;
             }

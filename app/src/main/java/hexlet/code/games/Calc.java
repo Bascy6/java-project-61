@@ -58,9 +58,9 @@ public class Calc {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + solution + "'.");
                 System.out.println("Let's try again, " + Cli.name + "!");
                 break;
+            }
         }
     }
-}
 
     public static int answer() {
         Scanner scanner = new Scanner(System.in);
