@@ -26,7 +26,7 @@ public class Progression {
     }
 
     public static String[] question(int[] array, int gap) {
-        String[] numbers = new String[10];
+        String[] numbers = new String[Engine.TEN];
         for (int j = 0; j < Engine.TEN; j++) {
             if (array[j] == array[gap]) {
                 numbers[j] = "..";
