@@ -1,16 +1,17 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Progression {
     private static String[][] round() {
-        String[][] data = new String[Engine.ROUNDS][Engine.ROUNDS];
-        for (int i = 0; i < Engine.ROUNDS; i++) {
-            int step = Engine.getRandomInt(2, Engine.SIX);
-            int gap = Engine.getRandomInt(1, Engine.NINE);
-            int[] array = new int[Engine.TEN];
-            array[0] = Engine.getRandomInt(0, Engine.NINE);
-            for (int k = 1; k < Engine.TEN; k++) {
+        String[][] data = new String[Utils.ROUNDS][Utils.ROUNDS];
+        for (int i = 0; i < Utils.ROUNDS; i++) {
+            int step = Utils.getRandomInt(2, Utils.SIX);
+            int gap = Utils.getRandomInt(1, Utils.NINE);
+            int[] array = new int[Utils.TEN];
+            array[0] = Utils.getRandomInt(0, Utils.NINE);
+            for (int k = 1; k < Utils.TEN; k++) {
                 array[k] = array[k - 1] + step;
             }
             data[i][0] = String.join(" ", question(array, gap));
@@ -26,8 +27,8 @@ public class Progression {
     }
 
     public static String[] question(int[] array, int gap) {
-        String[] numbers = new String[Engine.TEN];
-        for (int j = 0; j < Engine.TEN; j++) {
+        String[] numbers = new String[Utils.TEN];
+        for (int j = 0; j < Utils.TEN; j++) {
             if (array[j] == array[gap]) {
                 numbers[j] = "..";
             } else {

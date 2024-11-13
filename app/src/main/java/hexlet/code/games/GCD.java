@@ -1,13 +1,14 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GCD {
     private static String[][] round() {
-        String[][] data = new String[Engine.ROUNDS][Engine.ROUNDS];
-        for (int i = 0; i < Engine.ROUNDS; i++) {
-            int firstNumber = Engine.getRandomInt(0, Engine.HUNDRED);
-            int secondNumber = Engine.getRandomInt(0, Engine.HUNDRED);
+        String[][] data = new String[Utils.ROUNDS][Utils.ROUNDS];
+        for (int i = 0; i < Utils.ROUNDS; i++) {
+            int firstNumber = Utils.getRandomInt(0, Utils.HUNDRED);
+            int secondNumber = Utils.getRandomInt(0, Utils.HUNDRED);
             data[i][0] = firstNumber + " " + secondNumber;
             data[i][1] = Integer.toString(gcd(firstNumber, secondNumber));
         }

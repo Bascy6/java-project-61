@@ -1,14 +1,8 @@
 package hexlet.code;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
-    public static final int HUNDRED = 100;
-    public static final int ROUNDS = 3;
-    public static final int SIX = 6;
-    public static final int NINE = 9;
-    public static final int TEN = 10;
     private static String name;
 
     public static void game(String[][] data, String rule) {
@@ -19,7 +13,7 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
         System.out.println(rule);
 
-        for (int i = 0; i < ROUNDS; i++) {
+        for (int i = 0; i < Utils.ROUNDS; i++) {
             System.out.println("Question: " + data[i][0]);
             System.out.print("Your answer: ");
             String result = scanner.nextLine();
@@ -43,10 +37,5 @@ public class Engine {
         System.out.print("May I have your name? ");
         name = scanner.nextLine();
         System.out.println("Hello, " + name + "!");
-    }
-
-    public static int getRandomInt(int min, int max) {
-        Random rand = new Random();
-        return rand.nextInt(max - min + 1) + min;
     }
 }
