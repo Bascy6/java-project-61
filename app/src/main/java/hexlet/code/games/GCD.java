@@ -9,7 +9,7 @@ public class GCD {
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int firstNumber = Utils.getRandomInt(0, Utils.HUNDRED);
             int secondNumber = Utils.getRandomInt(0, Utils.HUNDRED);
-            data[i][0] = firstNumber + " " + secondNumber;
+            data[i][0] = Integer.toString(firstNumber) + " " + Integer.toString(secondNumber);
             data[i][1] = Integer.toString(gcd(firstNumber, secondNumber));
         }
         return data;
