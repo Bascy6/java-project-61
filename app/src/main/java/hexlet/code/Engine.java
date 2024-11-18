@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Engine {
     private static String name;
+    public static final int ROUNDS = 3;
 
     public static void game(String[][] data, String rule) {
         Scanner scanner = new Scanner(System.in);
@@ -13,7 +14,7 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
         System.out.println(rule);
 
-        for (int i = 0; i < Utils.ROUNDS; i++) {
+        for (int i = 0; i < ROUNDS; i++) {
             System.out.println("Question: " + data[i][0]);
             System.out.print("Your answer: ");
             String result = scanner.nextLine();

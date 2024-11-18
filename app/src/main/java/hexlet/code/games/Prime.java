@@ -4,8 +4,8 @@ import hexlet.code.Utils;
 
 public class Prime {
     private static String[][] round() {
-        String[][] data = new String[Utils.ROUNDS][Utils.ROUNDS];
-        for (int i = 0; i < Utils.ROUNDS; i++) {
+        String[][] data = new String[Engine.ROUNDS][Engine.ROUNDS];
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int randomInt = Utils.getRandomInt(2, Utils.HUNDRED);
             data[i][0] = Integer.toString(randomInt);
             data[i][1] = isNatural(randomInt) ? "yes" : "no";

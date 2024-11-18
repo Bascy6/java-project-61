@@ -6,8 +6,8 @@ import java.util.Random;
 
 public class Calc {
     private static String[][] round() {
-        String[][] data = new String[Utils.ROUNDS][Utils.ROUNDS];
-        for (int i = 0; i < Utils.ROUNDS; i++) {
+        String[][] data = new String[Engine.ROUNDS][Engine.ROUNDS];
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int firstNumber = Utils.getRandomInt(0, Utils.NINE);
             int secondNumber = Utils.getRandomInt(0, Utils.NINE);
             char operation = getOperation();
